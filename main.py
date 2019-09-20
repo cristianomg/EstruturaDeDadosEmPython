@@ -1,0 +1,105 @@
+from listas import lista_ligada
+from vetores import vetor
+from listas import lista_duplamente_ligada
+from pilhas import pilha
+from filas import fila
+from conjuntos import conjunto
+from mapas import mapa
+
+print('-'*30, 'MENU', '-'*30)
+print('1. vetores')
+print('2. listas')
+print('3. listas DUPLAMENTE LIGADA')
+print('4. pilhas')
+print('5. fila')
+print('6. conjunto')
+print('7. mapa')
+menu = int(input('Digite uma opção: '))
+
+if menu == 1:
+	vetor_teste = vetor.Vetor(0)
+	vetor_teste.inserir_elemento_final(2)
+	vetor_teste.inserir_elemento_posicao(1,0)
+	vetor_teste.inserir_elemento_posicao(2,1)
+	vetor_teste.inserir_elemento_posicao(3,2)
+	vetor_teste.inserir_elemento_posicao(4,2)
+	print(vetor_teste.tamanho)
+	print(vetor_teste)
+
+elif menu == 2:
+	lista = lista_ligada.ListaLigada()
+	lista.inserir(1)
+	lista.inserir(4)
+	lista.inserir(5)
+	lista.inserir_elemento_posicao_especifica(10,2)
+	print(lista)
+	print(lista.contem(55))
+	print(lista.contem(5))
+	print(lista.indice(5))
+	lista.remover_elemento(10)
+	print(lista)
+	lista.remover_pos(2)
+	print(lista)
+
+elif menu == 3:
+	lista_dupla = lista_duplamente_ligada.ListaDuplamenteLigada()
+	lista_dupla.inserir(1)
+	lista_dupla.inserir(4)
+	lista_dupla.inserir(5)
+	lista_dupla.inserir_elemento_posicao_especifica(10,2)
+	print(lista_dupla)
+	print(lista_dupla.contem(55))
+	print(lista_dupla.contem(5))
+	print(lista_dupla.indice(5))
+	lista_dupla.remover_elemento(10)
+	print(lista_dupla)
+	lista_dupla.remover_pos(2)
+	print(lista_dupla)
+elif menu == 4:	
+	pilha = pilha.Pilha()
+	pilha.empilhar(2)
+	pilha.empilhar(4)
+	pilha.empilhar(5)
+	pilha.empilhar(2)
+	print(pilha)
+	pilha.desempilhar()
+	print(pilha)
+	pilha.desempilhar()
+	print(pilha)
+	pilha.desempilhar()
+	print(pilha)
+	pilha.desempilhar()
+	print(pilha)
+elif menu == 5:	
+	fila = fila.Fila()
+	fila.enfilerar(1)
+	fila.enfilerar(2)
+	fila.enfilerar(3)
+	print(fila)
+	print(fila.desenfilerar())
+	print(fila)
+	print(fila.desenfilerar())
+	print(fila)
+	print(fila.desenfilerar())
+	print(fila)
+	print(fila.desenfilerar())
+
+elif menu == 6:
+	conjunto = conjunto.Conjunto(2)
+	conjunto.inserir(1)
+	conjunto.inserir(2)
+	conjunto.inserir(3)
+	print(conjunto.contem(3))
+	print(conjunto)
+	conjunto.remover(2)
+	print(conjunto)
+
+elif menu == 7:
+	mapa_teste = mapa.Mapa()
+	print(mapa_teste)
+	mapa_teste.adicionar("par", 10)
+	mapa_teste.adicionar("impar", 5)
+	print(mapa_teste)
+	mapa_teste.adicionar("impar", 7)
+	print(mapa_teste.contem_chave("par"))
+	print(mapa_teste.recuperar("par"))
